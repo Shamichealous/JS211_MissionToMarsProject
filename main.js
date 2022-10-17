@@ -11,6 +11,38 @@ const jobTypes = {
 
 // Your code will go here
 
+// created a class, with a constructor for taking in parameters//
+class CrewMember 
+{
+  constructor(name, job, specialSkill, ship = null){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship
+  }
+  // created a method that takes in a paramenter that lets us enter a ship 
+  //  
+  enterShip(ship){
+    this.ship = ship
+    ship.crew.push(this)
+  }
+}
+class Ship 
+{
+  constructor(name, type, ability, crew = []){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = crew
+  }
+  missionStatement(){
+    if(this.crew.length > 0){
+      return this.ability
+    } else {
+      return "Can't perform a mission yet."
+    }
+  }
+}
 
 
 
